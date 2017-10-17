@@ -14,7 +14,73 @@
 
 </ion-header>
 
-
 <ion-content padding>
-
+  <ion-fab right bottom>
+    <button ion-fab color="default" (click)="openCal()"><ion-icon name="md-calendar"></ion-icon></button>
+  </ion-fab>
+  <h1 class="date">{{date | date: 'yyyy-MM-dd'}}</h1>
+  <div padding>
+    <ion-segment [(ngModel)]="status">
+      <ion-segment-button value="jobs">
+        Jobs
+      </ion-segment-button>
+      <ion-segment-button value="jobs_remaining">
+        jobs remaining
+      </ion-segment-button>
+      <ion-segment-button value="jobs_completed">
+        jobs completed
+      </ion-segment-button>
+      <ion-segment-button value="job_requests">
+        job requests
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <div [ngSwitch]="status">
+    <ion-list *ngSwitchCase="'jobs'">
+      <div *ngFor="let item of data">
+        <div>
+          <ion-item>
+            <h1>{{item.task}}</h1>
+            <h2>{{item.fees}}</h2>
+            <h2>{{item.location}}</h2>
+            <h2>{{item.status}}</h2>
+            <h2>{{item.date}}</h2>
+          </ion-item>
+        </div>
+      </div>
+    </ion-list>
+    <ion-list *ngSwitchCase="'jobs_remaining'">
+      <div *ngFor="let item of data">
+        <div *ngIf="item.status=='remaining'">
+          <ion-item *ngIf="compare_dates(compare_date, item.date)">
+            <h1>{{item.task}}</h1>
+            <h2>{{item.fees}}</h2>
+            <h2>{{item.location}}</h2>
+          </ion-item>
+        </div>
+      </div>
+    </ion-list>
+    <ion-list *ngSwitchCase="'jobs_completed'">
+      <div *ngFor="let item of data">
+        <div *ngIf="item.status=='complete'">
+          <ion-item *ngIf="compare_dates(compare_date, item.date)">
+            <h1>{{item.task}}</h1>
+            <h2>{{item.fees}}</h2>
+            <h2>{{item.location}}</h2>
+          </ion-item>
+        </div>
+      </div>
+    </ion-list>
+    <ion-list *ngSwitchCase="'job_requests'">
+      <div *ngFor="let item of data">
+        <div *ngIf="item.status=='request'">
+          <ion-item *ngIf="compare_dates(compare_date, item.date)">
+            <h1>{{item.task}}</h1>
+            <h2>{{item.fees}}</h2>
+            <h2>{{item.location}}</h2>
+          </ion-item>
+        </div>
+      </div>
+    </ion-list>
+  </div>
 </ion-content>

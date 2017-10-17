@@ -8,11 +8,18 @@
 
   <ion-navbar>
     <ion-title>calendar</ion-title>
+    <ion-buttons end>
+      <button ion-button large (click)="closeModal()"><ion-icon name="close"></ion-icon></button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <div>
+    <div class="datepicker-container">
+      <ng-datepicker [(ngModel)]="date"></ng-datepicker>
+    </div>
+  </div>
 </ion-content>

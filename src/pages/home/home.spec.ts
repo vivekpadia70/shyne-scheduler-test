@@ -4,13 +4,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { MyApp } from '../../app/app.component';
 import { HomePage } from './home';
-import { DebugElement } from '@angular/core';
-import { By } from '@angular/platform-browser';
 
 let comp: MyApp;
 let fixture: ComponentFixture<MyApp>;
-let de: DebugElement;
-let el: HTMLElement;
 
 describe('Component: Root Component', () => {
 
@@ -43,8 +39,6 @@ describe('Component: Root Component', () => {
     afterEach(() => {
         fixture.destroy();
         comp = null;
-        de = null;
-        el = null;
     });
 
     it('is created', () => {

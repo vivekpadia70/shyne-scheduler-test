@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 
 /**
  * Generated class for the CalendarPage page.
@@ -14,12 +14,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'calendar.html',
 })
 export class CalendarPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  date: Date;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
+    this.date = new Date();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CalendarPage');
+  }
+  closeModal(){
+    this.viewCtrl.dismiss(this.date);
   }
 
 }

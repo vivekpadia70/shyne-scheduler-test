@@ -1,7 +1,5 @@
 import { async, TestBed } from '@angular/core/testing';
 import { IonicModule, Platform } from 'ionic-angular';
-import { DebugElement } from '@angular/core';
-import { By } from '@angular/platform-browser';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -16,8 +14,6 @@ import {
 describe('MyApp Component', () => {
   let fixture;
   let component;
-  let de: DebugElement;
-  let el: HTMLElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -41,8 +37,6 @@ describe('MyApp Component', () => {
   afterEach(() => {
       fixture.destroy();
       component = null;
-      de = null;
-      el = null;
   });
 
   it('should be created', () => {
