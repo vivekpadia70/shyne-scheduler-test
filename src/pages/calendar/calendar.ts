@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { JobsProvider } from '../../providers/jobs/jobs';
-
 /**
- * Generated class for the SchedulePage page.
+ * Generated class for the CalendarPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -12,16 +10,16 @@ import { JobsProvider } from '../../providers/jobs/jobs';
 
 @IonicPage()
 @Component({
-  selector: 'page-schedule',
-  templateUrl: 'schedule.html',
+  selector: 'page-calendar',
+  templateUrl: 'calendar.html',
 })
-export class SchedulePage {
+export class CalendarPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SchedulePage');
+    console.log('ionViewDidLoad CalendarPage');
   }
 
 }
