@@ -10,6 +10,12 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Schedule</ion-title>
+    <ion-buttons end>
+        <button ion-button [disabled]="isToday" (click)="today()">Today</button>
+        <button ion-button (click)="changeMode('month')">M</button>
+        <button ion-button (click)="changeMode('week')">W</button>
+        <button ion-button (click)="changeMode('day')">D</button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -19,7 +25,17 @@
     <button ion-fab color="default" (click)="openCal()"><ion-icon name="md-calendar"></ion-icon></button>
   </ion-fab>
   <h1 class="date">{{date | date: 'yyyy-MM-dd'}}</h1>
-  <div padding>
+  <calendar [eventSource]="eventSource"
+  [calendarMode]="calendar.mode"
+  [currentDate]="calendar.currentDate"
+  (onCurrentDateChanged)="onCurrentDateChanged($event)"
+  (onRangeChanged)="reloadSource(startTime, endTime)"
+  (onEventSelected)="onEventSelected($event)"
+  (onTitleChanged)="onViewTitleChanged($event)"
+  (onTimeSelected)="onTimeSelected($event)"
+  step="30">
+</calendar>
+  <div padding class='segments'>
     <ion-segment [(ngModel)]="status">
       <ion-segment-button value="jobs">
         Jobs

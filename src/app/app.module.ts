@@ -3,6 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { NgDatepickerModule } from 'ng2-datepicker';
 import { HttpModule } from '@angular/http';
+import { NgCalendarModule } from 'ionic2-calendar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -24,6 +25,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     NgDatepickerModule,
+    NgCalendarModule,
     HttpModule
   ],
   bootstrap: [IonicApp],

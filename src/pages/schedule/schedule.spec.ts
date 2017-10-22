@@ -13,7 +13,7 @@ import {
   SplashScreenMock
 } from '../../../test-config/mocks-ionic';
 
-describe('MyApp Component', () => {
+describe('Scheduler Component', () => {
   let fixture;
   let component;
   let de: DebugElement;
@@ -58,7 +58,7 @@ describe('MyApp Component', () => {
 
   it('should have segment', () => {
     fixture.detectChanges();
-    de = fixture.debugElement.query(By.css('ion-segment'));
+    de = fixture.debugElement.query(By.css('.segment'));
     el = de.nativeElement;
     expect(el).toBeTruthy();
   });
