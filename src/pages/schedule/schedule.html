@@ -21,10 +21,7 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-fab right bottom>
-    <button ion-fab color="default" (click)="openCal()"><ion-icon name="md-calendar"></ion-icon></button>
-  </ion-fab>
-  <h1 class="date">{{date | date: 'yyyy-MM-dd'}}</h1>
+
   <calendar [eventSource]="eventSource"
   [calendarMode]="calendar.mode"
   [currentDate]="calendar.currentDate"
@@ -34,7 +31,8 @@
   (onTitleChanged)="onViewTitleChanged($event)"
   (onTimeSelected)="onTimeSelected($event)"
   step="30">
-</calendar>
+  </calendar>
+  
   <div padding class='segments'>
     <ion-segment [(ngModel)]="status">
       <ion-segment-button value="jobs">

@@ -13,46 +13,52 @@ export class JobsProvider {
   worker =
   [
 
-    {"task": "Paint",
+    {"title": "Paint",
       "fees": "$40",
       "location": "New York",
       "status": "remaining",
-      "date": "Oct 16 2017"
+      "startTime": "Sun Oct 01 2017 05:30:00 GMT+0530 (IST)",
+      "endTime": "Mon Oct 02 2017 05:30:00 GMT+0530 (IST)"
     },
 
-    {"task": "Car Wash",
+    {"title": "Car Wash",
       "fees": "$30",
       "location": "New York",
       "status": "remaining",
-      "date": "Oct 20 2017"
+      "startTime": "Sun Nov 05 2017 23:21:00 GMT+0530 (IST)",
+      "endTime": "Mon Nov 06 2017 01:22:00 GMT+0530 (IST)"
     },
 
-    {"task": "Cleaning",
+    {"title": "Cleaning",
       "fees": "$40",
       "location": "New York",
       "status": "remaining",
-      "date": "Oct 19 2017"
+      "startTime": "Wed Nov 22 2017 05:30:00 GMT+0530 (IST)",
+      "endTime": "Thu Nov 23 2017 05:30:00 GMT+0530 (IST)"
     },
 
-    {"task": "Paint",
+    {"title": "Paint",
       "fees": "$70",
       "location": "New York",
       "status": "complete",
-      "date": "Oct 15 2017"
+      "startTime": "Thu Nov 16 2017 20:23:00 GMT+0530 (IST)",
+      "endTime": "Fri Nov 17 2017 22:32:00 GMT+0530 (IST)"
     },
 
-    {"task": "Car Wash",
+    {"title": "Car Wash",
       "fees": "$60",
       "location": "New York",
       "status": "request",
-      "date": "Oct 25 2017"
+      "startTime": "Fri Oct 13 2017 05:30:00 GMT+0530 (IST)",
+      "endTime": "Sat Oct 14 2017 05:30:00 GMT+0530 (IST)"
     },
 
-    {"task": "Decorate",
+    {"title": "Decorate",
       "fees": "$40",
       "location": "New York",
       "status": "request",
-      "date": "Oct 22 2017"
+      "startTime": "Thu Oct 05 2017 21:25:00 GMT+0530 (IST)",
+      "endTime": "Fri Oct 06 2017 23:36:00 GMT+0530 (IST)"
     }
   ];
   constructor(public http: Http) {

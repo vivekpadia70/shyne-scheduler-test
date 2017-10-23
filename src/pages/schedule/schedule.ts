@@ -108,6 +108,17 @@ export class SchedulePage {
       this.isToday = today.getTime() === event.getTime();
   }
 
+  to_date(){
+    var data = this.data;
+    console.log(data);
+    for(var i=0; i<data.length; i++){
+      data[i].startTime = new Date(data[i].startTime);
+      data[i].endTime = new Date(data[i].endTime);
+      console.log(data[i]);
+    }
+    this.data=data;
+  }
+  
   createRandomEvents() {
       var events = [];
       for (var i = 0; i < 50; i += 1) {
@@ -142,7 +153,8 @@ export class SchedulePage {
               });
           }
       }
-      console.log(events);
+      this.to_date();
+      events=this.data;
       return events;
   }
 
